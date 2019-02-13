@@ -1,7 +1,7 @@
 package jsfcdi;
 
 import java.io.Serializable;
-
+// These imports are important
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -21,7 +21,7 @@ public class Info implements Serializable {
     }
     
     @PostConstruct
-    public void posConstr() {
+    public void qualquer() {
     	this.firstName = "first";
     	this.lastName = "last";
     	this.count = 0;
@@ -36,13 +36,13 @@ public class Info implements Serializable {
         count++;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
+	public String getLastName() {
+		return lastName;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
 	public int getCount() {
 		return count;

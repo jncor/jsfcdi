@@ -12,15 +12,16 @@ public class Sitebean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Inject
-	Info myinfo;
+	private Info myinfo;
 	private int usage;
 	
-	public Sitebean() {
-		
-	}
 
 	@PostConstruct
 	public void posConstruct() {
+		init();
+	}
+	
+	public void init() {
 		usage = 0;
 	}
 	
@@ -35,7 +36,7 @@ public class Sitebean implements Serializable {
 	
 	public String getUsageInfo() {
 		// escape="false"
-		return "<p> Usage of info: " + this.usage + "</p";
+		return "<p> Usage of info: " + this.usage + "</p>";
 	}
 	
 	public String send() {
