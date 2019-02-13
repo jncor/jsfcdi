@@ -34,7 +34,8 @@ public class Sitebean implements Serializable {
 	}
 	
 	public String getUsageInfo() {
-		return "<p> Usage of info: " + this.usage;
+		// escape="false"
+		return "<p> Usage of info: " + this.usage + "</p";
 	}
 	
 	public String send() {

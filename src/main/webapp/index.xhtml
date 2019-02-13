@@ -15,7 +15,7 @@
             <h:inputText id="lastName" value="#{meusite.myinfo.lastName}"/>
             <h:commandButton action="#{meusite.send()}" value="send"/>
             <h:commandButton action="checkinfo" value="check"/>
-            <h:outputText value="#{meusite.usageInfo}" />
+            <h:outputText value="#{meusite.usageInfo}" escape="false" />
         </h:panelGrid>
     </h:form>
 
