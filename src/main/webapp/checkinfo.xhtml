@@ -10,5 +10,12 @@
     <p> Last name: #{meusite.myinfo.lastName} </p>
     <p> Changes count: #{meusite.myinfo.count} </p>
 
+	<h:form>
+        <h:panelGrid columns="1">
+<!--             ?faces-redirect=true -->
+            <h:commandButton action="index?faces-redirect=true" value="back"/>
+        </h:panelGrid>
+    </h:form>
+
 </h:body>
 </html>

@@ -5,6 +5,7 @@ import javax.enterprise.context.ApplicationScoped; // SCOPE !
 import javax.inject.Named; // DECLARATION !
 import javax.inject.Inject; // INJECTION !
 import java.io.Serializable;
+import jsfcdi.*;
 
 @Named(value="meusite")
 @ApplicationScoped
@@ -14,11 +15,23 @@ public class Sitebean implements Serializable {
 	@Inject
 	private Info myinfo;
 	private int usage;
+	private Integer[] array;
+	private Integer[][] arrayBi;
 	
 
 	@PostConstruct
 	public void posConstruct() {
 		init();
+		this.array = new Integer[12];
+		for(int i = 0 ;i < this.array.length ; i++) {
+			this.array[i] = i*2;
+		}
+		this.arrayBi = new Integer[5][5];
+		for(int i = 0 ;i < this.arrayBi.length ; i++) {
+			for (int j=0;j < this.arrayBi[0].length; j++) {
+				this.arrayBi[i][j] = i*3 + j;
+			}
+		}
 	}
 	
 	public void init() {
@@ -43,5 +56,32 @@ public class Sitebean implements Serializable {
 		this.usage++;
 		return "index";
 	}
+
+	public int getUsage() {
+		return usage;
+	}
+
+	public void setUsage(int usage) {
+		this.usage = usage;
+	}
+
+	public Integer[] getArray() {
+		return array;
+	}
+
+	public void setArray(Integer[] array) {
+		this.array = array;
+	}
+
+	public Integer[][] getArrayBi() {
+		return arrayBi;
+	}
+
+	public void setArrayBi(Integer[][] arrayBi) {
+		this.arrayBi = arrayBi;
+	}
+	
+
+	
 	
 }
